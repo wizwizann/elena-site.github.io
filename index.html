@@ -169,13 +169,14 @@ nav.scrolled { box-shadow: 0 2px 40px rgba(35,35,32,0.07); }
     align-items: stretch;
     height: 100svh;
     padding-top: 68px;
+    padding-bottom: 0;
   }
-  /* Illustration fills top ~35% of the screen */
+  /* Illustration: fixed pixel height for predictability on iOS */
   .hero-bg-svg {
     grid-column: auto;
-    flex: 0 0 35svh;
+    flex: 0 0 38%;
     min-height: 0;
-    height: 35svh;
+    height: 38%;
   }
   .hero-bg-svg::before {
     top: auto; left: 0; right: 0; bottom: 0;
@@ -186,18 +187,30 @@ nav.scrolled { box-shadow: 0 2px 40px rgba(35,35,32,0.07); }
     width: 100% !important;
     height: 100% !important;
   }
-  /* Text fills remaining space, vertically centered */
+  /* Text fills remaining space */
   .hero-text-panel {
     grid-column: auto;
     flex: 1;
+    min-height: 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 0.5rem 1.5rem 2rem;
+    padding: 0.75rem 1.5rem 1.5rem;
+    overflow: hidden;
   }
-  .hero-eyebrow-n  { margin-bottom: 0.6rem; }
-  .hero-title-n    { margin-bottom: 0.6rem; }
-  .hero-subtitle-n { margin-bottom: 1rem; font-size: 0.92rem; }
+  /* Eyebrow: horizontal row to save vertical space */
+  .hero-eyebrow-n {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    margin-bottom: 0.65rem;
+  }
+  /* Smaller h1 on mobile */
+  .hero-title-n {
+    font-size: clamp(1.9rem, 7vw, 2.4rem);
+    margin-bottom: 0.55rem;
+  }
+  .hero-subtitle-n { margin-bottom: 1rem; font-size: 0.9rem; line-height: 1.65; }
   /* On mobile: hide secondary link, keep only primary CTA */
   .hero-actions .btn-ghost { display: none; }
 }
