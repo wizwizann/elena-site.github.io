@@ -506,6 +506,47 @@ footer { background: var(--charcoal); padding: clamp(2.5rem,5vw,4rem) 0; }
 @keyframes fadeUp { from { opacity:0; transform:translateY(22px); } to { opacity:1; transform:none; } }
 .reveal { opacity:0; transform:translateY(18px); transition: opacity 0.7s ease, transform 0.7s ease; }
 .reveal.visible { opacity:1; transform:none; }
+
+/* ── TABLET (769px – 1024px) ─────────────────────────────── */
+@media (min-width: 769px) and (max-width: 1024px) {
+  /* Hero: narrower text column, keep grid layout */
+  #hero {
+    grid-template-columns: minmax(280px, 50%) 1fr;
+  }
+  .hero-text-panel {
+    padding: clamp(1rem, 3vw, 2rem) clamp(1.25rem, 4vw, 2.5rem);
+  }
+  h1 { font-size: clamp(2.2rem, 4.2vw, 3.2rem); }
+
+  /* About: keep two columns but tighter gap */
+  .about-grid {
+    gap: clamp(2rem, 4vw, 3.5rem);
+  }
+
+  /* Services: 2 columns instead of 3 on narrow tablets */
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Certs: 3 columns */
+  .certs-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* Testimonials: 2 columns */
+  .testimonials-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Contact: stack on portrait tablet */
+  @media (max-width: 900px) {
+    .contact-grid { grid-template-columns: 1fr; }
+  }
+
+  /* Nav: slightly smaller spacing */
+  .nav-links { gap: 1.75rem; }
+  .nav-links a { font-size: 0.78rem; }
+}
 </style>
 </head>
 <body>
@@ -676,7 +717,7 @@ footer { background: var(--charcoal); padding: clamp(2.5rem,5vw,4rem) 0; }
 
   <div class="hero-text-panel" style="animation: fadeUp 0.9s ease both;">
     <div class="hero-eyebrow-n">
-      <span>Kirchzarten · Freiburg · Schweiz</span>
+      <span>Freiburg · Schweiz (Basel)</span>
       <span>Persönlich &amp; Online</span>
       <span>Deutsch &amp; Russisch</span>
     </div>
@@ -779,7 +820,7 @@ footer { background: var(--charcoal); padding: clamp(2.5rem,5vw,4rem) 0; }
         <p>Unser erstes Treffen von etwa einer halben Stunde ist selbstverständlich unverbindlich und kostenfrei — denn Vertrauen ist die Basis meiner Aufgabe.</p>
         <ul class="service-list-n">
           <li>Gemeinsam über den weiteren Weg entscheiden</li>
-          <li>Persönlich in Kirchzarten bei Freiburg</li>
+          <li>Persönlich in Freiburg und Schweiz (Basel)</li>
           <li>Online via Telegram oder WhatsApp</li>
           <li>Auf Deutsch und Russisch</li>
         </ul>
@@ -951,7 +992,7 @@ footer { background: var(--charcoal); padding: clamp(2.5rem,5vw,4rem) 0; }
       <a href="#contact">Kontakt</a>
       <a href="impressum.html">Impressum &amp; Datenschutz</a>
     </div>
-    <span class="footer-copy">© 2025 Elena Staiger Beratung, Kirchzarten</span>
+    <span class="footer-copy">© 2026 Elena Staiger Beratung, Freiburg</span>
   </div>
 </footer>
 
