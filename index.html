@@ -396,44 +396,42 @@ nav.scrolled { box-shadow: 0 2px 40px rgba(35,35,32,0.07); }
 
 /* CONTACT */
 #contact { background: var(--off); }
-.contact-grid {
-  display: grid; grid-template-columns: 1fr 1.2fr;
-  gap: clamp(3rem,6vw,6rem); align-items: start;
-}
-@media (max-width: 768px) { .contact-grid { grid-template-columns: 1fr; } }
-.contact-info h2 { margin-bottom: 1.25rem; }
-.contact-info p { color: var(--mid); margin-bottom: 2rem; font-size: 1rem; }
-.contact-methods { display: flex; flex-direction: column; gap: 0.85rem; }
-.contact-method-n {
-  display: flex; align-items: center; gap: 1rem; padding: 1rem 1.2rem;
-  background: var(--white); border-radius: 12px; text-decoration: none; color: var(--charcoal);
-  transition: background var(--ease), transform var(--ease);
-  box-shadow: 0 2px 12px rgba(35,35,32,0.06);
-}
-.contact-method-n:hover { background: rgba(94,139,115,0.08); transform: translateX(4px); }
-.contact-method-n svg { flex-shrink: 0; color: var(--sage); }
-.method-label { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); }
-.method-value { font-size: 0.95rem; font-weight: 400; color: var(--charcoal); }
+.contact-centered { max-width: 700px; margin: 0 auto; }
+.contact-centered h2 { margin-bottom: 0.75rem; }
+.contact-lead { color: var(--mid); font-size: 1.02rem; margin-bottom: 2.5rem; }
 
-/* FORM */
-form { display: flex; flex-direction: column; gap: 1rem; }
-.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-@media (max-width: 500px) { .form-row { grid-template-columns: 1fr; } }
-.form-group { display: flex; flex-direction: column; gap: 0.35rem; }
-label { font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); font-weight: 400; }
-input, textarea, select {
-  font-family: var(--sans); font-size: 0.95rem; font-weight: 300;
-  padding: 0.85rem 1.1rem; border: 1.5px solid rgba(35,35,32,0.12);
-  background: var(--white); color: var(--charcoal); border-radius: 10px;
-  outline: none; transition: border-color var(--ease); width: 100%;
+/* 2×2 grid of CTA cards */
+.contact-cta-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
 }
-input:focus, textarea:focus, select:focus { border-color: var(--sage); }
-textarea { resize: vertical; min-height: 120px; }
-.form-privacy { font-size: 0.8rem; color: var(--muted); line-height: 1.6; }
-.form-success {
-  display: none; background: rgba(94,139,115,0.1); border: 1px solid var(--sage-lt);
-  border-radius: 10px; padding: 1.25rem; color: var(--sage-dk); font-size: 0.95rem;
+@media (max-width: 560px) { .contact-cta-grid { grid-template-columns: 1fr; } }
+
+.contact-cta-card {
+  display: flex; align-items: center; gap: 1rem;
+  padding: 1.1rem 1.25rem;
+  background: var(--white); border-radius: 14px;
+  text-decoration: none; color: var(--charcoal);
+  border: 1px solid rgba(35,35,32,0.06);
+  box-shadow: 0 2px 12px rgba(35,35,32,0.06);
+  transition: transform var(--ease), box-shadow var(--ease);
 }
+.contact-cta-card:hover { transform: translateY(-3px); box-shadow: 0 10px 32px rgba(35,35,32,0.11); }
+.cta-card-icon {
+  width: 48px; height: 48px; border-radius: 12px; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+}
+.cta-icon-whatsapp  { background: #e8f5e9; color: #25D366; }
+.cta-icon-telegram  { background: #e3f2fd; color: #229ED9; }
+.cta-icon-phone     { background: rgba(94,139,115,0.12); color: var(--sage-dk); }
+.cta-icon-email     { background: rgba(201,169,110,0.15); color: #a07828; }
+.cta-card-text { flex: 1; min-width: 0; }
+.cta-card-label { font-size: 0.7rem; letter-spacing: 0.09em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.15rem; }
+.cta-card-value { font-size: 0.9rem; font-weight: 400; color: var(--charcoal); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.cta-arrow { flex-shrink: 0; color: var(--muted); opacity: 0.5; transition: opacity var(--ease), transform var(--ease); }
+.contact-cta-card:hover .cta-arrow { opacity: 1; transform: translateX(3px); }
+
 
 /* BUTTONS */
 .btn-primary {
@@ -925,51 +923,61 @@ footer { background: var(--charcoal); padding: clamp(2.5rem,5vw,4rem) 0; }
 <!-- CONTACT -->
 <section id="contact">
   <div class="container">
-    <div class="contact-grid">
-      <div class="contact-info reveal">
-        <div class="section-label">Kontakt</div>
-        <h2>Lassen Sie uns<br><em>in Kontakt treten</em></h2>
-        <p>Schreiben Sie mir eine Nachricht oder rufen Sie mich direkt an. Ich freue mich auf Ihre Anfrage.</p>
-        <div class="contact-methods">
-          <a href="tel:+4976615612" class="contact-method-n">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 01.82 2.18 2 2 0 012.82 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.09 7.91a16 16 0 006 6l.98-.98a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-            <div><div class="method-label">Festnetz</div><div class="method-value">+49 7661 56 12</div></div>
-          </a>
-          <a href="tel:+491605045040" class="contact-method-n">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg>
-            <div><div class="method-label">Mobil</div><div class="method-value">+49 160 504 504 0</div></div>
-          </a>
-          <a href="mailto:meet@elenastaigerberatung.de" class="contact-method-n">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-            <div><div class="method-label">E-Mail</div><div class="method-value">meet@elenastaigerberatung.de</div></div>
-          </a>
-        </div>
-      </div>
-      <div class="reveal">
-        <form id="contactForm" onsubmit="handleSubmit(event)">
-          <div class="form-row">
-            <div class="form-group"><label for="fname">Vorname</label><input type="text" id="fname" placeholder="Maria" required></div>
-            <div class="form-group"><label for="lname">Nachname</label><input type="text" id="lname" placeholder="Müller"></div>
+    <div class="contact-centered reveal">
+      <div class="section-label">Kontakt</div>
+      <h2>Lassen Sie uns<br><em>in Kontakt treten</em></h2>
+      <p class="contact-lead">Wählen Sie einfach den Weg, der Ihnen am liebsten ist — ich freue mich auf Ihre Nachricht.</p>
+      <div class="contact-cta-grid">
+
+        <!-- WhatsApp -->
+        <a href="https://wa.me/491605045040" target="_blank" rel="noopener" class="contact-cta-card">
+          <div class="cta-card-icon cta-icon-whatsapp">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
           </div>
-          <div class="form-group"><label for="tel">Telefon</label><input type="tel" id="tel" placeholder="+49 160 …"></div>
-          <div class="form-group"><label for="email">E-Mail</label><input type="email" id="email" placeholder="ihre@email.de"></div>
-          <div class="form-group">
-            <label for="thema">Anliegen</label>
-            <select id="thema">
-              <option value="">Bitte wählen…</option>
-              <option>Psychologische Beratung / Coaching</option>
-              <option>Seniorenbetreuung</option>
-              <option>Kennenlerngespräch</option>
-              <option>Allgemeine Anfrage</option>
-            </select>
+          <div class="cta-card-text">
+            <div class="cta-card-label">WhatsApp</div>
+            <div class="cta-card-value">Nachricht schreiben</div>
           </div>
-          <div class="form-group"><label for="nachricht">Nachricht</label><textarea id="nachricht" placeholder="Womit kann ich Ihnen helfen? Sie können auch auf Russisch schreiben."></textarea></div>
-          <p class="form-privacy">Ihre Daten werden vertraulich behandelt und nicht an Dritte weitergegeben.</p>
-          <button type="submit" class="btn-submit">Anfrage senden →</button>
-        </form>
-        <div class="form-success" id="formSuccess">
-          <strong>Vielen Dank!</strong> Ihre Nachricht ist angekommen. Ich melde mich in der Regel innerhalb von 24 Stunden bei Ihnen.
-        </div>
+          <svg class="cta-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+
+        <!-- Telegram -->
+        <!-- Ersetze +491605045040 durch deinen Telegram-Benutzernamen: https://t.me/DEIN_USERNAME -->
+        <a href="https://t.me/+491605045040" target="_blank" rel="noopener" class="contact-cta-card">
+          <div class="cta-card-icon cta-icon-telegram">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+          </div>
+          <div class="cta-card-text">
+            <div class="cta-card-label">Telegram</div>
+            <div class="cta-card-value">Nachricht schreiben</div>
+          </div>
+          <svg class="cta-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+
+        <!-- Anrufen -->
+        <a href="tel:+491605045040" class="contact-cta-card">
+          <div class="cta-card-icon cta-icon-phone">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 01.82 2.18 2 2 0 012.82 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.09 7.91a16 16 0 006 6l.98-.98a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          </div>
+          <div class="cta-card-text">
+            <div class="cta-card-label">Anrufen</div>
+            <div class="cta-card-value">+49 160 504 504 0</div>
+          </div>
+          <svg class="cta-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+
+        <!-- E-Mail -->
+        <a href="mailto:meet@elenastaigerberatung.de" class="contact-cta-card">
+          <div class="cta-card-icon cta-icon-email">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </div>
+          <div class="cta-card-text">
+            <div class="cta-card-label">E-Mail</div>
+            <div class="cta-card-value">meet@elenastaigerberatung.de</div>
+          </div>
+          <svg class="cta-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+
       </div>
     </div>
   </div>
@@ -1014,11 +1022,6 @@ footer { background: var(--charcoal); padding: clamp(2.5rem,5vw,4rem) 0; }
     });
   }, { threshold: 0.08 });
   reveals.forEach(el => obs.observe(el));
-  function handleSubmit(e) {
-    e.preventDefault();
-    document.getElementById('contactForm').style.display = 'none';
-    document.getElementById('formSuccess').style.display = 'block';
-  }
   const lightbox = document.getElementById('lightbox');
   const lightboxImg = document.getElementById('lightboxImg');
   document.querySelectorAll('.cert-trigger').forEach(btn => {
