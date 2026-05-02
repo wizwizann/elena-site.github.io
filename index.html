@@ -1,0 +1,1009 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Elena Staiger – Psychologische Beratung & Personal Coaching, Freiburg</title>
+<meta name="description" content="Elena Staiger bietet psychologische Beratung, Personal Coaching und Seniorenbetreuung in Kirchzarten bei Freiburg und online.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,400;1,9..144,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --white:    #FAFAF8;
+  --off:      #F3EFEA;
+  --stone:    #EAE4DC;
+  --charcoal: #232320;
+  --mid:      #5A5753;
+  --muted:    #8A8480;
+  --sage:     #5E8B73;
+  --sage-lt:  #A8C4B5;
+  --sage-dk:  #3D6B55;
+  --rose:     #C4978A;
+  --rose-lt:  #E8C8C0;
+  --gold:     #C9A96E;
+  --gold-lt:  #E8D4A8;
+  --serif:    'Fraunces', Georgia, serif;
+  --sans:     'Inter', system-ui, sans-serif;
+  --max:      1120px;
+  --r:        10px;
+  --ease:     0.3s ease;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--sans);
+  background: var(--white);
+  color: var(--charcoal);
+  font-size: 16px;
+  line-height: 1.75;
+  font-weight: 300;
+  overflow-x: hidden;
+}
+
+h1, h2, h3 { font-family: var(--serif); font-weight: 400; line-height: 1.15; }
+h1 { font-size: clamp(2.8rem, 5.5vw, 4.5rem); }
+h2 { font-size: clamp(1.9rem, 3.5vw, 2.8rem); }
+h3 { font-size: clamp(1.25rem, 2vw, 1.6rem); }
+em, i { font-style: italic; color: var(--sage); }
+p { max-width: 64ch; line-height: 1.85; }
+
+.container { max-width: var(--max); margin: 0 auto; padding: 0 clamp(1.25rem, 5vw, 3rem); }
+section { padding: clamp(4rem, 8vw, 7rem) 0; }
+
+/* NAV */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  background: rgba(250,250,248,0.92);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(35,35,32,0.07);
+  transition: box-shadow var(--ease);
+}
+nav.scrolled { box-shadow: 0 2px 40px rgba(35,35,32,0.07); }
+.nav-inner {
+  max-width: var(--max); margin: 0 auto;
+  padding: 0 clamp(1.25rem, 5vw, 3rem);
+  height: 68px; display: flex; align-items: center; justify-content: space-between;
+}
+.nav-logo {
+  font-family: var(--serif); font-size: 1.25rem; font-weight: 400;
+  color: var(--charcoal); text-decoration: none; letter-spacing: 0.01em;
+}
+.nav-logo span { color: var(--sage); }
+.nav-links { display: flex; align-items: center; gap: 2.5rem; list-style: none; }
+.nav-links a {
+  font-size: 0.82rem; font-weight: 400; letter-spacing: 0.06em; text-transform: uppercase;
+  color: var(--muted); text-decoration: none; transition: color var(--ease);
+}
+.nav-links a:hover { color: var(--charcoal); }
+.nav-cta {
+  background: var(--sage) !important; color: var(--white) !important;
+  padding: 0.55rem 1.3rem; border-radius: 50px !important; transition: background var(--ease) !important;
+}
+.nav-cta:hover { background: var(--sage-dk) !important; }
+.nav-burger { display: none; background: none; border: none; cursor: pointer; padding: 6px; }
+.nav-burger span { display: block; width: 22px; height: 1.5px; background: var(--charcoal); margin: 5px 0; transition: var(--ease); }
+.mobile-menu {
+  display: none; position: fixed; inset: 68px 0 0;
+  background: var(--white); z-index: 99;
+  padding: 2rem; flex-direction: column;
+}
+.mobile-menu.open { display: flex; }
+.mobile-menu a {
+  font-size: 1.2rem; font-family: var(--serif);
+  color: var(--charcoal); text-decoration: none;
+  border-bottom: 1px solid var(--stone); padding: 1rem 0;
+}
+@media (max-width: 768px) { .nav-links { display: none; } .nav-burger { display: block; } }
+
+/* HERO */
+#hero {
+  min-height: 100svh; padding-top: 68px;
+  background: linear-gradient(135deg, #F3EFEA 0%, #EAE4DC 40%, #E4DDD4 100%);
+  display: flex; align-items: center;
+}
+.hero-inner {
+  display: grid; grid-template-columns: 1.1fr 1fr; gap: clamp(3rem, 6vw, 6rem);
+  align-items: center; width: 100%; max-width: var(--max);
+  margin: 0 auto; padding: clamp(3rem,6vw,5rem) clamp(1.25rem,5vw,3rem);
+}
+@media (max-width: 768px) {
+  .hero-inner { grid-template-columns: 1fr; }
+  .hero-visual-n { order: -1; }
+}
+.hero-eyebrow-n {
+  font-size: 0.78rem; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--sage); font-weight: 500; margin-bottom: 1.5rem;
+  display: flex; flex-wrap: wrap; gap: 0.5rem 1rem; align-items: center;
+}
+.hero-eyebrow-n span {
+  background: rgba(94,139,115,0.1); padding: 0.3rem 0.8rem;
+  border-radius: 50px; white-space: nowrap;
+}
+.hero-title-n { color: var(--charcoal); margin-bottom: 1.5rem; }
+.hero-subtitle-n {
+  font-size: 1.05rem; color: var(--mid); margin-bottom: 2.5rem;
+  line-height: 1.9; font-weight: 300;
+}
+.hero-actions { display: flex; align-items: center; gap: 1.25rem; flex-wrap: wrap; }
+.hero-visual-n {
+  position: relative;
+}
+.hero-photo-wrap {
+  border-radius: 40% 60% 55% 45% / 45% 40% 60% 55%;
+  overflow: hidden; aspect-ratio: 4/5;
+  background: var(--stone);
+  box-shadow: 0 30px 80px rgba(35,35,32,0.12);
+}
+.hero-photo-wrap img {
+  width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block;
+}
+.hero-badge-n {
+  position: absolute; bottom: 2rem; left: -1.5rem;
+  background: var(--white); border-radius: var(--r);
+  box-shadow: 0 12px 40px rgba(35,35,32,0.12);
+  padding: 1rem 1.4rem;
+  display: flex; align-items: center; gap: 0.75rem;
+}
+.badge-icon { width: 36px; height: 36px; border-radius: 50%; background: rgba(94,139,115,0.15); display: flex; align-items: center; justify-content: center; color: var(--sage); flex-shrink: 0; }
+.badge-text strong { display: block; font-size: 0.9rem; font-weight: 500; color: var(--charcoal); }
+.badge-text span { font-size: 0.75rem; color: var(--muted); }
+
+/* SECTION LABEL */
+.section-label {
+  font-size: 0.75rem; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--sage); font-weight: 500; margin-bottom: 1rem;
+  display: flex; align-items: center; gap: 0.75rem;
+}
+.section-label::before { content: ''; display: block; width: 24px; height: 1px; background: var(--sage); }
+
+/* ABOUT */
+#ueber-mich { background: var(--white); }
+.about-grid {
+  display: grid; grid-template-columns: 1fr 1.3fr;
+  gap: clamp(3rem,6vw,6rem); align-items: start;
+}
+@media (max-width: 768px) { .about-grid { grid-template-columns: 1fr; } }
+.about-portrait-n {
+  aspect-ratio: 3/4; background: var(--stone); border-radius: 20px;
+  overflow: hidden; position: relative;
+  box-shadow: 0 20px 60px rgba(35,35,32,0.1);
+}
+.about-portrait-n img { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; }
+.about-text h2 { margin-bottom: 1.5rem; }
+.about-text p { color: var(--mid); margin-bottom: 1rem; font-size: 1rem; }
+.about-text p.lead { color: var(--charcoal); font-size: 1.08rem; font-weight: 400; }
+.certs-row { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 2rem; }
+.cert-chip {
+  font-size: 0.78rem; padding: 0.4rem 1rem;
+  border: 1px solid var(--sage-lt); border-radius: 50px;
+  color: var(--sage-dk); letter-spacing: 0.02em;
+  background: rgba(94,139,115,0.06);
+}
+
+/* HALLO */
+#hallo { background: var(--off); }
+.hallo-card { max-width: 780px; margin: 0 auto; }
+.hallo-card h2 { margin-bottom: 1.5rem; }
+.hallo-card p { color: var(--charcoal); font-size: 1.05rem; line-height: 1.9; margin-bottom: 1.25rem; }
+.hallo-credo {
+  margin: 2.5rem 0 1.5rem; padding: 2rem 2rem;
+  background: var(--white); border-radius: var(--r);
+  box-shadow: 0 8px 32px rgba(35,35,32,0.06);
+  border-left: 4px solid var(--sage);
+}
+.hallo-credo p {
+  font-family: var(--serif); font-size: 1.25rem; font-style: italic;
+  color: var(--sage-dk); line-height: 1.65; margin-bottom: 0; max-width: none;
+}
+.hallo-sign { font-family: var(--serif); font-style: italic; font-size: 1.2rem; color: var(--rose); margin-top: 1.75rem; }
+
+/* SERVICES */
+#leistungen { background: var(--white); }
+.services-header { margin-bottom: 3.5rem; }
+.services-header h2 { margin-bottom: 0.75rem; }
+.services-header p { color: var(--mid); font-size: 1.05rem; }
+.services-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+.service-card-n {
+  background: var(--white); border-radius: 16px; padding: clamp(1.75rem,3vw,2.5rem);
+  box-shadow: 0 4px 24px rgba(35,35,32,0.07), 0 1px 4px rgba(35,35,32,0.04);
+  border: 1px solid rgba(35,35,32,0.06);
+  transition: transform var(--ease), box-shadow var(--ease);
+  position: relative; overflow: hidden;
+}
+.service-card-n::after {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px;
+  background: linear-gradient(90deg, var(--sage-lt), var(--sage));
+  opacity: 0; transition: opacity var(--ease);
+}
+.service-card-n:hover { transform: translateY(-4px); box-shadow: 0 16px 48px rgba(35,35,32,0.12); }
+.service-card-n:hover::after { opacity: 1; }
+.service-icon-n {
+  width: 52px; height: 52px; margin-bottom: 1.5rem; color: var(--sage);
+  background: rgba(94,139,115,0.1); border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+}
+.service-card-n h3 { margin-bottom: 0.75rem; }
+.service-card-n > p { font-size: 0.95rem; color: var(--mid); margin-bottom: 1.25rem; }
+.service-list-n { list-style: none; font-size: 0.88rem; color: var(--mid); display: flex; flex-direction: column; gap: 0.5rem; }
+.service-list-n li { display: flex; align-items: flex-start; gap: 0.6rem; line-height: 1.6; }
+.service-list-n li::before { content: ''; flex-shrink: 0; width: 6px; height: 6px; border-radius: 50%; background: var(--sage-lt); margin-top: 0.55em; }
+
+/* SENIOR NOTE */
+.senior-note-n {
+  margin-top: 2.5rem; padding: clamp(1.5rem,3vw,2.25rem) clamp(1.5rem,4vw,2.5rem);
+  background: var(--off); border-radius: 16px;
+  border: 1px solid rgba(35,35,32,0.06);
+}
+.senior-note-n p { font-family: var(--serif); font-size: 1.05rem; font-style: italic; color: var(--charcoal); line-height: 1.7; margin-bottom: 0.85rem; max-width: 70ch; }
+.senior-note-n .confirm { font-family: var(--sans); font-style: normal; font-size: 0.78rem; color: var(--sage); letter-spacing: 0.08em; text-transform: uppercase; font-weight: 500; margin-top: 0.5rem; margin-bottom: 0; }
+
+/* CERTS */
+#zertifikate { background: var(--off); }
+.certs-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.25rem; margin-top: 2.5rem;
+}
+.cert-card-n {
+  background: var(--white); border-radius: 12px; overflow: hidden;
+  box-shadow: 0 4px 20px rgba(35,35,32,0.08);
+  transition: transform var(--ease), box-shadow var(--ease);
+}
+.cert-card-n:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(35,35,32,0.12); }
+.cert-card-n button { display: block; width: 100%; padding: 0; border: none; background: transparent; cursor: zoom-in; }
+.cert-card-n img { width: 100%; aspect-ratio: 3/4; object-fit: cover; display: block; }
+.cert-card-lbl-n { padding: 0.65rem 1rem; font-size: 0.75rem; color: var(--muted); text-align: center; letter-spacing: 0.03em; }
+
+/* TESTIMONIALS */
+#stimmen { background: var(--white); }
+.testimonials-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem; margin-top: 3rem;
+}
+.testimonial-card-n {
+  background: var(--off); border-radius: 16px;
+  padding: clamp(1.5rem,3vw,2rem); position: relative;
+  border: 1px solid rgba(35,35,32,0.05);
+}
+.testimonial-card-n::before {
+  content: '\201C'; font-family: var(--serif); font-size: 5rem; font-weight: 400;
+  color: var(--sage-lt); position: absolute; top: -0.5rem; left: 1.25rem;
+  line-height: 1; pointer-events: none;
+}
+.testimonial-topic-n {
+  display: inline-block; font-size: 0.72rem; padding: 0.25rem 0.85rem;
+  border-radius: 50px; background: rgba(94,139,115,0.12); color: var(--sage-dk);
+  margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 0.06em;
+}
+.testimonial-text-n {
+  font-family: var(--serif); font-size: 1.05rem; font-weight: 400; font-style: italic;
+  line-height: 1.8; color: var(--charcoal); margin-bottom: 1.25rem; padding-top: 1.5rem;
+}
+.testimonial-author-n { font-size: 0.8rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
+.ru-details-n { margin-top: 1rem; margin-bottom: 0.75rem; }
+.ru-details-n summary {
+  cursor: pointer; list-style: none; display: inline-flex; align-items: center; gap: 0.5rem;
+  font-size: 0.78rem; font-weight: 500; color: var(--rose);
+  padding: 0.4rem 1rem; border: 1px solid var(--rose-lt); border-radius: 50px;
+  transition: background var(--ease); user-select: none;
+}
+.ru-details-n summary::-webkit-details-marker { display: none; }
+.ru-details-n summary::after { content: '+'; font-size: 1rem; }
+.ru-details-n[open] summary::after { content: '−'; }
+.ru-translation-n {
+  font-size: 0.92rem; color: var(--mid); margin-top: 0.85rem;
+  padding: 1rem; background: rgba(35,35,32,0.03); border-radius: 8px;
+  font-style: normal; line-height: 1.65;
+}
+
+/* CTA */
+#intro-cta {
+  background: linear-gradient(135deg, var(--sage-dk) 0%, #2E5442 100%);
+  padding: clamp(4rem,7vw,6rem) 0;
+}
+.cta-inner { max-width: 780px; margin: 0 auto; text-align: center; padding: 0 clamp(1.25rem,5vw,3rem); }
+#intro-cta .section-label { justify-content: center; color: var(--sage-lt); }
+#intro-cta .section-label::before { background: var(--sage-lt); }
+#intro-cta h2 { color: var(--white); margin-bottom: 1rem; }
+#intro-cta > .cta-inner > p { color: rgba(250,250,248,0.75); margin: 0 auto 2.5rem; font-size: 1.05rem; }
+.cta-cards { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-bottom: 2.5rem; }
+.cta-card-n {
+  background: rgba(250,250,248,0.1); border: 1px solid rgba(250,250,248,0.2);
+  border-radius: 12px; padding: 1rem 1.5rem; min-width: 150px;
+}
+.cta-card-val { font-family: var(--serif); font-size: 1.7rem; font-weight: 400; color: var(--white); }
+.cta-card-lbl { font-size: 0.75rem; color: rgba(250,250,248,0.55); letter-spacing: 0.06em; text-transform: uppercase; margin-top: 0.2rem; }
+.contact-tel { display: block; margin-top: 1.5rem; font-size: 0.85rem; color: rgba(250,250,248,0.5); }
+.contact-tel a { color: var(--gold-lt); text-decoration: none; }
+.contact-tel a:hover { color: var(--white); }
+
+/* CONTACT */
+#contact { background: var(--off); }
+.contact-grid {
+  display: grid; grid-template-columns: 1fr 1.2fr;
+  gap: clamp(3rem,6vw,6rem); align-items: start;
+}
+@media (max-width: 768px) { .contact-grid { grid-template-columns: 1fr; } }
+.contact-info h2 { margin-bottom: 1.25rem; }
+.contact-info p { color: var(--mid); margin-bottom: 2rem; font-size: 1rem; }
+.contact-methods { display: flex; flex-direction: column; gap: 0.85rem; }
+.contact-method-n {
+  display: flex; align-items: center; gap: 1rem; padding: 1rem 1.2rem;
+  background: var(--white); border-radius: 12px; text-decoration: none; color: var(--charcoal);
+  transition: background var(--ease), transform var(--ease);
+  box-shadow: 0 2px 12px rgba(35,35,32,0.06);
+}
+.contact-method-n:hover { background: rgba(94,139,115,0.08); transform: translateX(4px); }
+.contact-method-n svg { flex-shrink: 0; color: var(--sage); }
+.method-label { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); }
+.method-value { font-size: 0.95rem; font-weight: 400; color: var(--charcoal); }
+
+/* FORM */
+form { display: flex; flex-direction: column; gap: 1rem; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+@media (max-width: 500px) { .form-row { grid-template-columns: 1fr; } }
+.form-group { display: flex; flex-direction: column; gap: 0.35rem; }
+label { font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); font-weight: 400; }
+input, textarea, select {
+  font-family: var(--sans); font-size: 0.95rem; font-weight: 300;
+  padding: 0.85rem 1.1rem; border: 1.5px solid rgba(35,35,32,0.12);
+  background: var(--white); color: var(--charcoal); border-radius: 10px;
+  outline: none; transition: border-color var(--ease); width: 100%;
+}
+input:focus, textarea:focus, select:focus { border-color: var(--sage); }
+textarea { resize: vertical; min-height: 120px; }
+.form-privacy { font-size: 0.8rem; color: var(--muted); line-height: 1.6; }
+.form-success {
+  display: none; background: rgba(94,139,115,0.1); border: 1px solid var(--sage-lt);
+  border-radius: 10px; padding: 1.25rem; color: var(--sage-dk); font-size: 0.95rem;
+}
+
+/* BUTTONS */
+.btn-primary {
+  display: inline-block; background: var(--sage); color: var(--white);
+  padding: 1rem 2.25rem; border-radius: 50px; text-decoration: none;
+  font-size: 0.85rem; letter-spacing: 0.06em; text-transform: uppercase; font-weight: 500;
+  transition: background var(--ease), transform var(--ease), box-shadow var(--ease);
+  box-shadow: 0 8px 24px rgba(94,139,115,0.3);
+}
+.btn-primary:hover { background: var(--sage-dk); transform: translateY(-2px); box-shadow: 0 12px 32px rgba(94,139,115,0.4); }
+.btn-ghost {
+  display: inline-block; color: var(--charcoal); text-decoration: none;
+  font-size: 0.85rem; letter-spacing: 0.05em;
+  border-bottom: 1.5px solid var(--rose-lt); padding-bottom: 2px;
+  transition: border-color var(--ease), color var(--ease);
+}
+.btn-ghost:hover { border-color: var(--rose); color: var(--rose); }
+.btn-light {
+  display: inline-block; background: var(--white); color: var(--sage-dk);
+  padding: 1rem 2.25rem; border-radius: 50px; text-decoration: none;
+  font-size: 0.85rem; letter-spacing: 0.06em; text-transform: uppercase; font-weight: 500;
+  transition: background var(--ease), transform var(--ease);
+  box-shadow: 0 8px 24px rgba(35,35,32,0.15);
+}
+.btn-light:hover { background: var(--off); transform: translateY(-2px); }
+.btn-submit {
+  background: var(--sage); color: var(--white); border: none;
+  padding: 1rem 2rem; font-family: var(--sans); font-size: 0.82rem;
+  letter-spacing: 0.08em; text-transform: uppercase; font-weight: 500;
+  cursor: pointer; border-radius: 50px;
+  transition: background var(--ease), transform var(--ease);
+  align-self: flex-start;
+  box-shadow: 0 6px 20px rgba(94,139,115,0.3);
+}
+.btn-submit:hover { background: var(--sage-dk); transform: translateY(-1px); }
+
+/* FOOTER */
+footer { background: var(--charcoal); padding: clamp(2.5rem,5vw,4rem) 0; }
+.footer-inner {
+  max-width: var(--max); margin: 0 auto; padding: 0 clamp(1.25rem,5vw,3rem);
+  display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1.5rem;
+}
+.footer-logo { font-family: var(--serif); font-size: 1.15rem; font-weight: 400; color: var(--white); text-decoration: none; }
+.footer-links { display: flex; gap: 2rem; flex-wrap: wrap; }
+.footer-links a { font-size: 0.78rem; letter-spacing: 0.05em; color: rgba(250,250,248,0.35); text-decoration: none; transition: color var(--ease); }
+.footer-links a:hover { color: var(--white); }
+.footer-copy { font-size: 0.75rem; color: rgba(250,250,248,0.25); }
+
+/* LIGHTBOX */
+.lightbox {
+  position: fixed; inset: 0; z-index: 200;
+  background: rgba(35,35,32,0.92);
+  display: flex; align-items: center; justify-content: center;
+  padding: 2rem; opacity: 0; pointer-events: none;
+  transition: opacity 0.25s ease; backdrop-filter: blur(4px);
+}
+.lightbox.open { opacity: 1; pointer-events: auto; }
+.lightbox-img { max-width: min(94vw, 1100px); max-height: 90vh; object-fit: contain; border-radius: 12px; }
+.lightbox-close {
+  position: absolute; top: 1.25rem; right: 1.25rem;
+  width: 44px; height: 44px; border-radius: 50%;
+  background: rgba(250,250,248,0.12); color: var(--white);
+  border: 1px solid rgba(250,250,248,0.25); cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.5rem; font-weight: 300; transition: background var(--ease);
+}
+.lightbox-close:hover { background: rgba(250,250,248,0.25); }
+
+/* ANIMATIONS */
+@keyframes fadeUp { from { opacity:0; transform:translateY(22px); } to { opacity:1; transform:none; } }
+.reveal { opacity:0; transform:translateY(18px); transition: opacity 0.7s ease, transform 0.7s ease; }
+.reveal.visible { opacity:1; transform:none; }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="#hero" class="nav-logo">Elena <span>Staiger</span></a>
+    <ul class="nav-links">
+      <li><a href="#ueber-mich">Über mich</a></li>
+      <li><a href="#leistungen">Leistungen</a></li>
+      <li><a href="#zertifikate">Zertifikate</a></li>
+      <li><a href="#stimmen">Referenzen</a></li>
+      <li><a href="#contact" class="nav-cta">Kennenlernen →</a></li>
+    </ul>
+    <button class="nav-burger" id="burger" aria-label="Menü öffnen"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#ueber-mich" onclick="closeMobile()">Über mich</a>
+  <a href="#leistungen" onclick="closeMobile()">Leistungen</a>
+  <a href="#zertifikate" onclick="closeMobile()">Zertifikate</a>
+  <a href="#stimmen" onclick="closeMobile()">Referenzen</a>
+  <a href="#contact" onclick="closeMobile()">Kontakt</a>
+</div>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-inner">
+    <div style="animation: fadeUp 0.9s ease both;">
+      <div class="hero-eyebrow-n">
+        <span>Kirchzarten · Freiburg · Schweiz</span>
+        <span>Persönlich &amp; Online</span>
+        <span>Deutsch &amp; Russisch</span>
+      </div>
+      <h1 class="hero-title-n">Ihren Weg<br><em>zu sich selbst</em><br>finden.</h1>
+      <p class="hero-subtitle-n">Psychologische Beratung, Personal Coaching und einfühlsame Seniorenbetreuung — mit Wärme, Intuition und jahrzehntelanger Erfahrung.</p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn-primary">Kostenloses Erstgespräch</a>
+        <a href="#leistungen" class="btn-ghost">Leistungen entdecken</a>
+      </div>
+    </div>
+    <div class="hero-visual-n" style="animation: fadeUp 0.9s ease both 0.2s;">
+      <div class="hero-photo-wrap">
+        <svg id="heroSvg" style="width:100%;height:100%;display:block;" viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Zwei Sessel an einem sonnenbeschienenen Fenster">
+          <defs>
+            <linearGradient id="wallGrad" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#F2DEC2"/>
+              <stop offset="55%" stop-color="#EDE3D2"/>
+              <stop offset="100%" stop-color="#E4DDD2"/>
+            </linearGradient>
+            <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1">
+              <stop id="skyStop1" offset="0%" stop-color="#FFF1D4"/>
+              <stop id="skyStop2" offset="55%" stop-color="#F8DCB4"/>
+              <stop id="skyStop3" offset="100%" stop-color="#E8C29B"/>
+            </linearGradient>
+            <linearGradient id="floorGrad" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#C5A684"/>
+              <stop offset="100%" stop-color="#9A7E58"/>
+            </linearGradient>
+            <radialGradient id="warmGlow" cx="0.5" cy="0.32" r="0.55">
+              <stop id="warmGlowStop" offset="0%" stop-color="#FFE0B8" stop-opacity="0.55"/>
+              <stop offset="100%" stop-color="#FFE0B8" stop-opacity="0"/>
+            </radialGradient>
+            <linearGradient id="lightPool" x1="0.5" y1="0" x2="0.5" y2="1">
+              <stop id="poolStop" offset="0%" stop-color="#FFEAC4" stop-opacity="0.7"/>
+              <stop offset="100%" stop-color="#FFEAC4" stop-opacity="0"/>
+            </linearGradient>
+            <linearGradient id="sillGrad" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#5D4736"/>
+              <stop offset="100%" stop-color="#3D2B1F"/>
+            </linearGradient>
+            <clipPath id="windowClip">
+              <path d="M298 122 Q298 80 348 80 L652 80 Q702 80 702 122 L702 580 L298 580 Z"/>
+            </clipPath>
+          </defs>
+          <rect width="1000" height="630" fill="url(#wallGrad)"/>
+          <rect width="1000" height="630" fill="url(#warmGlow)"/>
+          <rect x="0" y="630" width="1000" height="370" fill="url(#floorGrad)"/>
+          <g stroke="#7E6448" stroke-width="0.8" opacity="0.25">
+            <line x1="0" y1="700" x2="1000" y2="700"/>
+            <line x1="0" y1="780" x2="1000" y2="780"/>
+            <line x1="0" y1="865" x2="1000" y2="865"/>
+            <line x1="0" y1="950" x2="1000" y2="950"/>
+          </g>
+          <polygon points="285,630 715,630 870,1000 130,1000" fill="url(#lightPool)" opacity="0.6"/>
+          <g>
+            <path d="M280 110 Q280 65 340 65 L660 65 Q720 65 720 110 L720 595 L280 595 Z" fill="#3D2B1F"/>
+            <path d="M298 122 Q298 80 348 80 L652 80 Q702 80 702 122 L702 580 L298 580 Z" fill="url(#skyGrad)"/>
+            <g clip-path="url(#windowClip)">
+              <circle id="sunOuter" cx="500" cy="200" r="80" fill="#FFEED5" opacity="0.55"/>
+              <circle id="sunInner" cx="500" cy="200" r="50" fill="#FFFCEB" opacity="0.7"/>
+            </g>
+            <path d="M298 470 Q335 425 385 450 Q435 405 490 445 Q545 405 600 445 Q650 420 702 445 L702 580 L298 580 Z" fill="#7A9180" opacity="0.55"/>
+            <path d="M298 510 Q360 488 425 503 Q495 482 575 503 Q645 495 702 510 L702 580 L298 580 Z" fill="#5E7A66" opacity="0.75"/>
+            <rect x="298" y="555" width="404" height="25" fill="#94A89C" opacity="0.6"/>
+            <line x1="500" y1="80" x2="500" y2="580" stroke="#3D2B1F" stroke-width="7"/>
+            <line x1="298" y1="320" x2="702" y2="320" stroke="#3D2B1F" stroke-width="7"/>
+            <rect x="262" y="595" width="476" height="24" fill="url(#sillGrad)"/>
+            <rect x="262" y="595" width="476" height="6" fill="#6E5440"/>
+          </g>
+          <g>
+            <polygon id="beam1" points="335,120 380,120 460,630 380,630" fill="#FFE2B8" opacity="0.16"/>
+            <polygon id="beam2" points="555,120 600,120 660,630 580,630" fill="#FFE2B8" opacity="0.16"/>
+          </g>
+          <rect x="0" y="624" width="1000" height="8" fill="#D4C4B0" opacity="0.6"/>
+          <!-- Left armchair (sage) -->
+          <g transform="translate(70,560)">
+            <ellipse cx="195" cy="345" rx="205" ry="16" fill="#3D2B1F" opacity="0.22"/>
+            <path d="M32 0 Q18 60 22 180 Q26 252 52 264 L338 264 Q364 252 368 180 Q372 60 358 0 Q322 -14 195 -14 Q68 -14 32 0 Z" fill="#4E6458"/>
+            <path d="M44 8 Q32 60 36 170 Q42 218 72 222 L106 222 Q92 130 96 18 Z" fill="#607A6C" opacity="0.65"/>
+            <path d="M-2 130 Q-6 280 14 296 L48 296 Q48 282 54 180 Q46 150 30 140 Z" fill="#3F5448"/>
+            <path d="M392 130 Q396 280 376 296 L342 296 Q342 282 336 180 Q344 150 360 140 Z" fill="#3F5448"/>
+            <path d="M44 218 L346 218 L376 326 L14 326 Z" fill="#7A9180"/>
+            <ellipse cx="195" cy="256" rx="138" ry="13" fill="#94A89C" opacity="0.5"/>
+            <path d="M44 218 L346 218" stroke="#3F5448" stroke-width="1.5" opacity="0.6"/>
+            <rect x="24" y="324" width="14" height="22" rx="2" fill="#2A1F17"/>
+            <rect x="352" y="324" width="14" height="22" rx="2" fill="#2A1F17"/>
+            <ellipse cx="115" cy="222" rx="44" ry="20" fill="#E0B99A"/>
+            <ellipse cx="115" cy="218" rx="44" ry="18" fill="#F0CFB0"/>
+          </g>
+          <!-- Right armchair (terra) -->
+          <g transform="translate(550,575)">
+            <ellipse cx="195" cy="345" rx="205" ry="16" fill="#3D2B1F" opacity="0.24"/>
+            <path d="M32 0 Q18 60 22 180 Q26 252 52 264 L338 264 Q364 252 368 180 Q372 60 358 0 Q322 -14 195 -14 Q68 -14 32 0 Z" fill="#B5714A"/>
+            <path d="M44 8 Q32 60 36 170 Q42 218 72 222 L106 222 Q92 130 96 18 Z" fill="#C9885F" opacity="0.65"/>
+            <path d="M-2 130 Q-6 280 14 296 L48 296 Q48 282 54 180 Q46 150 30 140 Z" fill="#9C5E3D"/>
+            <path d="M392 130 Q396 280 376 296 L342 296 Q342 282 336 180 Q344 150 360 140 Z" fill="#9C5E3D"/>
+            <path d="M44 218 L346 218 L376 326 L14 326 Z" fill="#E0B99A"/>
+            <ellipse cx="195" cy="256" rx="138" ry="13" fill="#F0CFB0" opacity="0.6"/>
+            <path d="M44 218 L346 218" stroke="#9C5E3D" stroke-width="1.5" opacity="0.6"/>
+            <rect x="24" y="324" width="14" height="22" rx="2" fill="#2A1F17"/>
+            <rect x="352" y="324" width="14" height="22" rx="2" fill="#2A1F17"/>
+            <path d="M-2 200 Q-12 240 -8 290 Q12 285 24 270 Q22 230 14 200 Z" fill="#4E6458"/>
+          </g>
+          <!-- Side table -->
+          <g transform="translate(465,720)">
+            <path d="M56 -8 Q50 -50 60 -62 L80 -62 Q90 -50 84 -8 Z" fill="#7A9180"/>
+            <ellipse cx="70" cy="-8" rx="15" ry="3.5" fill="#5E7A66"/>
+            <path d="M70 -62 Q66 -86 70 -108" stroke="#5E7A66" stroke-width="2.5" fill="none"/>
+            <path d="M70 -85 Q58 -90 56 -78 Q64 -76 70 -85" fill="#7A9180"/>
+            <ellipse cx="60" cy="-114" rx="6" ry="4" fill="#E0B99A" transform="rotate(-25 60 -114)"/>
+            <ellipse cx="80" cy="-114" rx="6" ry="4" fill="#E0B99A" transform="rotate(25 80 -114)"/>
+            <ellipse cx="62" cy="-104" rx="6" ry="4" fill="#E8C29B" transform="rotate(20 62 -104)"/>
+            <ellipse cx="78" cy="-104" rx="6" ry="4" fill="#E8C29B" transform="rotate(-20 78 -104)"/>
+            <circle cx="70" cy="-110" r="8" fill="#D4955F"/>
+            <circle cx="70" cy="-110" r="3" fill="#3D2B1F"/>
+            <ellipse cx="70" cy="0" rx="62" ry="11" fill="#3D2B1F"/>
+            <ellipse cx="70" cy="-2" rx="60" ry="9" fill="#5D4736"/>
+            <path d="M61 2 L66 105 L74 105 L79 2 Z" fill="#3D2B1F"/>
+            <ellipse cx="70" cy="108" rx="40" ry="9" fill="#3D2B1F"/>
+            <ellipse cx="70" cy="106" rx="38" ry="7" fill="#5D4736"/>
+          </g>
+          <!-- Left foreground plant -->
+          <g transform="translate(15,710)">
+            <ellipse cx="55" cy="232" rx="60" ry="10" fill="#3D2B1F" opacity="0.3"/>
+            <path d="M14 168 L96 168 L88 235 L22 235 Z" fill="#9C5E3D"/>
+            <path d="M10 162 L100 162 L96 178 L14 178 Z" fill="#B5714A"/>
+            <path d="M55 165 Q15 110 6 35 Q22 8 35 35 Q42 110 55 165 Z" fill="#7A9180"/>
+            <path d="M55 165 Q95 110 104 35 Q88 8 75 35 Q68 110 55 165 Z" fill="#7A9180"/>
+            <path d="M55 165 Q38 105 42 18 Q55 0 68 18 Q72 105 55 165 Z" fill="#94A89C"/>
+            <path d="M55 165 Q22 138 16 80 Q30 72 40 95 Q48 138 55 165 Z" fill="#5E7A66"/>
+            <path d="M55 165 Q88 138 94 80 Q80 72 70 95 Q62 138 55 165 Z" fill="#5E7A66"/>
+          </g>
+          <!-- Right foreground plant -->
+          <g transform="translate(910,755)">
+            <ellipse cx="40" cy="208" rx="48" ry="8" fill="#3D2B1F" opacity="0.3"/>
+            <path d="M10 150 L72 150 L66 215 L16 215 Z" fill="#7A9180"/>
+            <path d="M8 144 L74 144 L72 158 L10 158 Z" fill="#94A89C"/>
+            <path d="M40 145 Q15 100 12 48 Q22 33 32 53 Q36 110 40 145 Z" fill="#5E7A66"/>
+            <path d="M40 145 Q62 95 68 58 Q56 38 48 60 Q42 110 40 145 Z" fill="#7A9180"/>
+            <path d="M40 145 Q35 95 42 25 Q50 12 56 28 Q48 100 40 145 Z" fill="#94A89C"/>
+          </g>
+          <g fill="#FFF1D4" opacity="0.6">
+            <circle cx="430" cy="380" r="1.5"/>
+            <circle cx="475" cy="450" r="1.2"/>
+            <circle cx="540" cy="350" r="1.3"/>
+            <circle cx="600" cy="420" r="1.2"/>
+            <circle cx="380" cy="500" r="1.4"/>
+          </g>
+        </svg>
+      </div>
+      <div class="hero-badge-n">
+        <div class="badge-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+        </div>
+        <div class="badge-text">
+          <strong>Erstgespräch kostenlos</strong>
+          <span>unverbindlich · ~30 Minuten</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ÜBER MICH -->
+<section id="ueber-mich">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-portrait-n reveal">
+        <img src="photo1.jpg" alt="Elena Staiger, Psychologische Beraterin, Kirchzarten bei Freiburg" onerror="this.onerror=null; this.style.display='none';">
+      </div>
+      <div class="about-text reveal">
+        <div class="section-label">Über mich</div>
+        <h2>Elena Staiger —<br><em>Beraterin aus Leidenschaft</em></h2>
+        <p class="lead">Ich bin Elena Staiger, geboren in Kasachstan und seit über 30 Jahren zuhause in Kirchzarten bei Freiburg. Was ich tue, tue ich mit ganzer Seele: Menschen begleiten, die an Wendepunkten stehen oder die wieder zu sich selbst finden möchten.</p>
+        <p>Durch meine Arbeit als Seniorenbetreuerin, mein ehrenamtliches Engagement mit krebskranken Kindern und die jahrelange Zusammenarbeit mit Ärzten und der Neurologie habe ich ein tiefes, ganzheitliches Verständnis für das entwickelt, was Menschen trägt und was sie belastet.</p>
+        <p>Auf Wunsch berate ich auch auf Russisch.</p>
+        <div class="certs-row">
+          <span class="cert-chip">Psychologische Beraterin</span>
+          <span class="cert-chip">Personal Coach</span>
+          <span class="cert-chip">Betreuungsassistentin §87b</span>
+          <span class="cert-chip">TA-Psychotherapie</span>
+          <span class="cert-chip">Diabetes-Beratung Typ II</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HALLO -->
+<section id="hallo">
+  <div class="container">
+    <div class="hallo-card reveal">
+      <div class="section-label">Persönliche Worte</div>
+      <h2>Hallo, <em>Ihr Lieben!</em></h2>
+      <p>Es ist mir äußerst wichtig, meine Arbeit gut zu machen — und ich liebe sie. Deswegen begleite und unterstütze ich seit vielen Jahren Menschen, die Krankheit, Verlust oder Einsamkeit überstanden haben. Heute spüre und weiß ich, dass meine Berufung darin besteht, Raum für Licht, Wärme und ein tiefes Verstehen zu geben.</p>
+      <p>Ich kreiere diesen Raum mit Liebe, um all jene zu unterstützen, die ihren Weg zu sich selbst suchen. Wenn Sie an einem Wendepunkt stehen, wenn Sie wieder tief durchatmen und an sich glauben möchten — ich bin gerne für Sie da.</p>
+      <p>Fürsorge, Intuition sowie körperliche und seelische Praxis verbinde ich professionell, individuell und persönlich, um meinen Klientinnen und Klienten zu helfen, sich daran zu erinnern, wer sie einmal waren und wer sie heute sind.</p>
+      <blockquote class="hallo-credo">
+        <p>„Wenn wir der Stimme unseres Herzens folgen, wird die Welt sanfter, heller und dem näher sein, was wir als Sinn des Lebens verstehen."</p>
+      </blockquote>
+      <div class="hallo-sign">— Elena</div>
+    </div>
+  </div>
+</section>
+
+<!-- LEISTUNGEN -->
+<section id="leistungen">
+  <div class="container">
+    <div class="services-header reveal">
+      <div class="section-label">Leistungen</div>
+      <h2>Wie ich Ihnen helfen kann</h2>
+      <p>Zwei Bereiche, ein Herzensanliegen: Sie auf Ihrem ganz eigenen Weg zu unterstützen.</p>
+    </div>
+    <div class="services-grid reveal">
+      <div class="service-card-n">
+        <div class="service-icon-n">
+          <svg width="24" height="24" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="20" cy="14" r="7"/><path d="M8 36c0-6.627 5.373-12 12-12s12 5.373 12 12" stroke-linecap="round"/></svg>
+        </div>
+        <h3>Psychologische Beratung &amp; Coaching</h3>
+        <p>Für Menschen, die sich an einem Wendepunkt befinden oder wieder zu sich selbst finden möchten.</p>
+        <ul class="service-list-n">
+          <li>Selbstwert &amp; Selbstbewusstsein stärken</li>
+          <li>Stress, Unruhe, schwierige Situationen</li>
+          <li>Trauer, Verlust &amp; Traumabewältigung</li>
+          <li>Schlafprobleme &amp; depressive Phasen</li>
+          <li>Übergewicht &amp; Körpergefühl</li>
+          <li>Rehabilitation &amp; Neustart</li>
+        </ul>
+      </div>
+      <div class="service-card-n">
+        <div class="service-icon-n">
+          <svg width="24" height="24" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 6 C14 6 8 11 8 18 C8 28 20 36 20 36 C20 36 32 28 32 18 C32 11 26 6 20 6Z"/><circle cx="20" cy="18" r="4"/></svg>
+        </div>
+        <h3>Betreuung älterer Menschen</h3>
+        <p>Respektvolle, liebevolle Begleitung für Seniorinnen und Senioren in Alltag und Leben.</p>
+        <ul class="service-list-n">
+          <li>Alltagsbegleitung &amp; gemeinsame Aktivitäten</li>
+          <li>Reisebegleitung mit eigenem PKW</li>
+          <li>Unterstützung bei Demenz &amp; Vergesslichkeit</li>
+          <li>Traumabewältigung &amp; Einsamkeit</li>
+          <li>Körpertherapie (Ayurveda, Ölmassage)</li>
+          <li>Ernährungsberatung Diabetes Typ II</li>
+        </ul>
+      </div>
+      <div class="service-card-n">
+        <div class="service-icon-n">
+          <svg width="24" height="24" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 16C8 11.582 11.582 8 16 8s8 3.582 8 8c0 3-1.5 5.5-3.5 7.5L16 30l-4.5-4.5C9.5 23.5 8 21 8 18" stroke-linejoin="round"/><circle cx="16" cy="16" r="3"/><path d="M22 26c3 1 8 3.5 8 7H4c0-3.5 5-6 8-7" stroke-linecap="round"/></svg>
+        </div>
+        <h3>Kennenlerngespräch — kostenfrei</h3>
+        <p>Unser erstes Treffen von etwa einer halben Stunde ist selbstverständlich unverbindlich und kostenfrei — denn Vertrauen ist die Basis meiner Aufgabe.</p>
+        <ul class="service-list-n">
+          <li>Gemeinsam über den weiteren Weg entscheiden</li>
+          <li>Persönlich in Kirchzarten bei Freiburg</li>
+          <li>Online via Telegram oder WhatsApp</li>
+          <li>Auf Deutsch und Russisch</li>
+        </ul>
+      </div>
+    </div>
+    <aside class="senior-note-n reveal">
+      <div class="section-label">Anliegen Seniorenbetreuung</div>
+      <p>Wichtig ist mir speziell bei der Betreuung älterer Menschen, die autonome Freiheit im Alter trotz kognitiver Einschränkungen weitestgehend zu erhalten — um psychosomatischen Symptomen vorzubeugen. Niemand soll und darf sich zuhause verstecken. Es gilt, Körper, Geist und Seele zu pflegen, um eine würdevolle Zeit so lange wie möglich zu genießen.</p>
+      <p class="confirm">Erfolge von neurologischer und ärztlicher Seite bestätigt.</p>
+    </aside>
+  </div>
+</section>
+
+<!-- ZERTIFIKATE -->
+<section id="zertifikate">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-label">Qualifikationen</div>
+      <h2>Zertifikate &amp; Ausbildungen</h2>
+      <p style="color:var(--mid); margin-top:0.75rem;">Meine Arbeit ist fundiert durch anerkannte Ausbildungen und ärztliche Empfehlungen.</p>
+    </div>
+    <div class="certs-grid reveal">
+      <div class="cert-card-n">
+        <button class="cert-trigger" data-src="cert1.jpg" aria-label="Zertifikat TA-Psychotherapie">
+          <img src="cert1.jpg" alt="Zertifikat TA-Psychotherapie" loading="lazy">
+        </button>
+        <div class="cert-card-lbl-n">TA-Psychotherapie</div>
+      </div>
+      <div class="cert-card-n">
+        <button class="cert-trigger" data-src="cert2.jpg" aria-label="Betreuungsassistentin §87b">
+          <img src="cert2.jpg" alt="Betreuungsassistentin §87b" loading="lazy">
+        </button>
+        <div class="cert-card-lbl-n">Betreuungsassistentin §87b</div>
+      </div>
+      <div class="cert-card-n">
+        <button class="cert-trigger" data-src="cert3.jpg" aria-label="Diabetes Typ 2">
+          <img src="cert3.jpg" alt="Diabetes Typ 2 im Alter" loading="lazy">
+        </button>
+        <div class="cert-card-lbl-n">Diabetes Typ 2 im Alter</div>
+      </div>
+      <div class="cert-card-n">
+        <button class="cert-trigger" data-src="cert4.jpg" aria-label="Neurologie Bad Krozingen">
+          <img src="cert4.jpg" alt="Neurologie Bad Krozingen" loading="lazy">
+        </button>
+        <div class="cert-card-lbl-n">Neurologie Bad Krozingen</div>
+      </div>
+      <div class="cert-card-n">
+        <button class="cert-trigger" data-src="cert5.jpg" aria-label="Psychologische Beraterin">
+          <img src="cert5.jpg" alt="Psychologische Beraterin" loading="lazy">
+        </button>
+        <div class="cert-card-lbl-n">Psychologische Beraterin</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="stimmen">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-label">Stimmen meiner Klienten</div>
+      <h2>Was Menschen sagen,<br><em>die den Weg gegangen sind</em></h2>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card-n reveal">
+        <span class="testimonial-topic-n">Selbstwert &amp; Befreiung vom Jo-Jo-Effekt</span>
+        <p class="testimonial-text-n">Was als reine Neugierde auf eine neue Methode begann, hat sich zu einem lebensverändernden Abenteuer entwickelt. Mein Feind war das Übergewicht — ich nannte mich selbst „Jo-Jo" — Jahrzehnte lang. Seit Oktober 2024 hat sich Schritt für Schritt meine Einstellung zu mir und meinem Körper verändert. Ich verändere mich.</p>
+        <p class="testimonial-text-n" style="padding-top:0;">Ich bin unendlich dankbar, dass ich von depressiven Phasen und Diäten seit Oktober 2024 frei bin. Meine Seele beginnt zu heilen — und mein Körper dankt es mir. Ich lebe!</p>
+        <div class="testimonial-author-n">Rita — Klientin</div>
+      </div>
+      <div class="testimonial-card-n reveal">
+        <span class="testimonial-topic-n">Echte Fortschritte nach Jahren der Therapie</span>
+        <p class="testimonial-text-n">Vielen Dank für all Deine Hilfe und Unterstützung in der letzten Zeit. Du bist immer offen, immer unterstützend, vorurteils- und urteilsfrei. Dein großes Talent ist, die Dinge auf den Punkt zu bringen und stets die richtigen Worte zu finden.</p>
+        <p class="testimonial-text-n" style="padding-top:0;">Ich habe schon sehr lange therapeutisch gearbeitet, jedoch nie solche Fortschritte gemacht wie mit Dir. Ich werde Dir immer dankbar sein. Danke.</p>
+        <div class="testimonial-author-n">Benniamin Mayer — Klient</div>
+      </div>
+      <div class="testimonial-card-n reveal">
+        <span class="testimonial-topic-n">Zurück ins Leben — neuer Mut, neue Kraft</span>
+        <p style="font-size:0.85rem; color:var(--muted); margin-bottom:0.5rem;">Beratung auch auf Russisch verfügbar.</p>
+        <p class="testimonial-text-n">Единственный человек, который помог мне справиться с депрессией, бессонницей и кучей страхов. Я вернулась к нормальной жизни. Ушли депрессия, чувство страха, тревоги, вины. Я наконец-то начала нормально спать! Безмерно благодарна Елене за её чуткость, понимание и доброту. Спасибо за новую жизнь!</p>
+        <details class="ru-details-n">
+          <summary>Freie Übersetzung</summary>
+          <div class="ru-translation-n">Elena Staiger ist die einzige Person, die mir wirklich geholfen hat, meine depressiven Phasen, die Schlaflosigkeit sowie zahlreiche Ängste zu überwinden. Ich konnte Stück für Stück zu mir selbst zurückfinden. Ich bin Elena zutiefst dankbar für ihre Feinfühligkeit und herzliche Art. Danke für dieses neue Leben!</div>
+        </details>
+        <div class="testimonial-author-n">Alexandra — Klientin (auf Russisch beraten)</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div id="intro-cta">
+  <div class="cta-inner reveal">
+    <div class="section-label">Erstes Kennenlernen</div>
+    <h2>Lernen wir uns<br><em>kennen.</em></h2>
+    <p>Unser Kennenlerngespräch und erstes Treffen von etwa einer halben Stunde ist selbstverständlich unverbindlich und kostenfrei — denn Vertrauen ist die Basis meiner Aufgabe, und wir entscheiden gemeinsam über unseren weiteren Weg. Wählen Sie Ihre bevorzugte Beratungsform: persönlich oder online via Telegram oder WhatsApp.</p>
+    <div class="cta-cards">
+      <div class="cta-card-n"><div class="cta-card-val">~30 min</div><div class="cta-card-lbl">Dauer</div></div>
+      <div class="cta-card-n"><div class="cta-card-val">Kostenfrei</div><div class="cta-card-lbl">Unverbindlich</div></div>
+      <div class="cta-card-n"><div class="cta-card-val">Persönlich</div><div class="cta-card-lbl">oder online</div></div>
+    </div>
+    <a href="#contact" class="btn-light">Jetzt Termin anfragen</a>
+    <span class="contact-tel">Oder direkt anrufen: <a href="tel:+491605045040">+49 160 504 504 0</a></span>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="contact-info reveal">
+        <div class="section-label">Kontakt</div>
+        <h2>Lassen Sie uns<br><em>in Kontakt treten</em></h2>
+        <p>Schreiben Sie mir eine Nachricht oder rufen Sie mich direkt an. Ich freue mich auf Ihre Anfrage.</p>
+        <div class="contact-methods">
+          <a href="tel:+4976615612" class="contact-method-n">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 01.82 2.18 2 2 0 012.82 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.09 7.91a16 16 0 006 6l.98-.98a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            <div><div class="method-label">Festnetz</div><div class="method-value">+49 7661 56 12</div></div>
+          </a>
+          <a href="tel:+491605045040" class="contact-method-n">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg>
+            <div><div class="method-label">Mobil</div><div class="method-value">+49 160 504 504 0</div></div>
+          </a>
+          <a href="mailto:meet@elenastaigerberatung.de" class="contact-method-n">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <div><div class="method-label">E-Mail</div><div class="method-value">meet@elenastaigerberatung.de</div></div>
+          </a>
+        </div>
+      </div>
+      <div class="reveal">
+        <form id="contactForm" onsubmit="handleSubmit(event)">
+          <div class="form-row">
+            <div class="form-group"><label for="fname">Vorname</label><input type="text" id="fname" placeholder="Maria" required></div>
+            <div class="form-group"><label for="lname">Nachname</label><input type="text" id="lname" placeholder="Müller"></div>
+          </div>
+          <div class="form-group"><label for="tel">Telefon</label><input type="tel" id="tel" placeholder="+49 160 …"></div>
+          <div class="form-group"><label for="email">E-Mail</label><input type="email" id="email" placeholder="ihre@email.de"></div>
+          <div class="form-group">
+            <label for="thema">Anliegen</label>
+            <select id="thema">
+              <option value="">Bitte wählen…</option>
+              <option>Psychologische Beratung / Coaching</option>
+              <option>Seniorenbetreuung</option>
+              <option>Kennenlerngespräch</option>
+              <option>Allgemeine Anfrage</option>
+            </select>
+          </div>
+          <div class="form-group"><label for="nachricht">Nachricht</label><textarea id="nachricht" placeholder="Womit kann ich Ihnen helfen? Sie können auch auf Russisch schreiben."></textarea></div>
+          <p class="form-privacy">Ihre Daten werden vertraulich behandelt und nicht an Dritte weitergegeben.</p>
+          <button type="submit" class="btn-submit">Anfrage senden →</button>
+        </form>
+        <div class="form-success" id="formSuccess">
+          <strong>Vielen Dank!</strong> Ihre Nachricht ist angekommen. Ich melde mich in der Regel innerhalb von 24 Stunden bei Ihnen.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true">
+  <button class="lightbox-close" id="lightboxClose" aria-label="Schließen">×</button>
+  <img class="lightbox-img" id="lightboxImg" src="" alt="">
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <a href="#hero" class="footer-logo">Elena Staiger</a>
+    <div class="footer-links">
+      <a href="#ueber-mich">Über mich</a>
+      <a href="#leistungen">Leistungen</a>
+      <a href="#zertifikate">Zertifikate</a>
+      <a href="#contact">Kontakt</a>
+      <a href="impressum.html">Impressum &amp; Datenschutz</a>
+    </div>
+    <span class="footer-copy">© 2025 Elena Staiger Beratung, Kirchzarten</span>
+  </div>
+</footer>
+
+<script>
+  const nav = document.getElementById('navbar');
+  window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 20));
+  const burger = document.getElementById('burger');
+  const mob = document.getElementById('mobileMenu');
+  burger.addEventListener('click', () => mob.classList.toggle('open'));
+  function closeMobile() { mob.classList.remove('open'); }
+  const reveals = document.querySelectorAll('.reveal');
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        e.target.style.transitionDelay = (i % 3) * 0.1 + 's';
+        e.target.classList.add('visible');
+        obs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.08 });
+  reveals.forEach(el => obs.observe(el));
+  function handleSubmit(e) {
+    e.preventDefault();
+    document.getElementById('contactForm').style.display = 'none';
+    document.getElementById('formSuccess').style.display = 'block';
+  }
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightboxImg');
+  document.querySelectorAll('.cert-trigger').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const img = btn.querySelector('img');
+      lightboxImg.src = btn.dataset.src;
+      lightboxImg.alt = img ? img.alt : '';
+      lightbox.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    });
+  });
+  function closeLightbox() {
+    lightbox.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  document.getElementById('lightboxClose').addEventListener('click', closeLightbox);
+  lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLightbox(); });
+
+  /* SCROLL-DRIVEN SUN — tied to hero visibility */
+  (function () {
+    const heroSvg = document.getElementById('heroSvg');
+    const heroEl  = document.getElementById('hero');
+    if (!heroSvg || !heroEl) return;
+    const sunOuter     = heroSvg.querySelector('#sunOuter');
+    const sunInner     = heroSvg.querySelector('#sunInner');
+    const skyStop1     = heroSvg.querySelector('#skyStop1');
+    const skyStop2     = heroSvg.querySelector('#skyStop2');
+    const skyStop3     = heroSvg.querySelector('#skyStop3');
+    const warmGlowStop = heroSvg.querySelector('#warmGlowStop');
+    const poolStop     = heroSvg.querySelector('#poolStop');
+    const beam1        = heroSvg.querySelector('#beam1');
+    const beam2        = heroSvg.querySelector('#beam2');
+    const KF = {
+      sunOuter: ['#FFB088','#FFEED5','#FF7A55'],
+      sunInner: ['#FFCFA0','#FFFCEB','#FFA890'],
+      skyTop:   ['#F8C8A8','#FFF1D4','#FFB890'],
+      skyMid:   ['#F4B898','#F8DCB4','#E88060'],
+      skyBot:   ['#E89880','#E8C29B','#B85040'],
+      glow:     ['#FFB088','#FFE0B8','#FF8A60'],
+      pool:     ['#FFCFA8','#FFEAC4','#FFB088']
+    };
+    function lerpColor(c1,c2,t){
+      const ah=parseInt(c1.slice(1),16),bh=parseInt(c2.slice(1),16);
+      const ar=(ah>>16)&255,ag=(ah>>8)&255,ab=ah&255;
+      const br=(bh>>16)&255,bg=(bh>>8)&255,bb=bh&255;
+      const cr=Math.round(ar+(br-ar)*t),cg=Math.round(ag+(bg-ag)*t),cb=Math.round(ab+(bb-ab)*t);
+      return '#'+((cr<<16)|(cg<<8)|cb).toString(16).padStart(6,'0');
+    }
+    function pickColor(stops,t){ return t<=0.5?lerpColor(stops[0],stops[1],t*2):lerpColor(stops[1],stops[2],(t-0.5)*2); }
+    let raf=null, isVisible=true;
+    function update(){
+      raf=null;
+      const rect=heroEl.getBoundingClientRect();
+      const heroHeight=heroEl.offsetHeight||1;
+      if(!isVisible&&rect.bottom<0) return;
+      const t=Math.max(0,Math.min(1,-rect.top/heroHeight));
+      const x=380+t*240, y=460-Math.sin(t*Math.PI)*300;
+      sunOuter.setAttribute('cx',x); sunOuter.setAttribute('cy',y);
+      sunInner.setAttribute('cx',x); sunInner.setAttribute('cy',y);
+      sunOuter.setAttribute('fill',pickColor(KF.sunOuter,t));
+      sunInner.setAttribute('fill',pickColor(KF.sunInner,t));
+      skyStop1.setAttribute('stop-color',pickColor(KF.skyTop,t));
+      skyStop2.setAttribute('stop-color',pickColor(KF.skyMid,t));
+      skyStop3.setAttribute('stop-color',pickColor(KF.skyBot,t));
+      warmGlowStop.setAttribute('stop-color',pickColor(KF.glow,t));
+      poolStop.setAttribute('stop-color',pickColor(KF.pool,t));
+      const beamOp=0.05+Math.sin(t*Math.PI)*0.18;
+      if(beam1) beam1.setAttribute('opacity',beamOp.toFixed(3));
+      if(beam2) beam2.setAttribute('opacity',beamOp.toFixed(3));
+    }
+    function onScroll(){ if(!raf) raf=requestAnimationFrame(update); }
+    if('IntersectionObserver' in window){
+      new IntersectionObserver((entries)=>{
+        entries.forEach(e=>{ isVisible=e.isIntersecting; if(isVisible) onScroll(); });
+      },{threshold:0}).observe(heroEl);
+    }
+    update();
+    window.addEventListener('scroll',onScroll,{passive:true});
+    window.addEventListener('resize',onScroll);
+  })();
+</script>
+</body>
+</html>
