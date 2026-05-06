@@ -181,30 +181,27 @@ nav.scrolled { box-shadow: 0 2px 40px rgba(35,35,32,0.07); }
 
 /* ══════════════════════════════════════════════════════════════
    МОБИЛЬНЫЕ УСТРОЙСТВА  ≤ 768px
-   (все телефоны: iPhone SE → iPhone 15 Pro Max, Android)
+   Принцип: высота героя = контент, никакого min-height: 100svh.
+   Это устраняет пустоту снизу и показывает все элементы.
    ══════════════════════════════════════════════════════════════ */
 @media (max-width: 768px) {
 
-  /* ── Hero: flex-колонка, растягивается по содержимому ───── */
+  /* Hero — простой flex-столбец, высота по содержимому */
   #hero {
     display: flex;
     flex-direction: column;
     align-items: stretch;
-    /* min-height вместо height — на маленьких экранах кнопка
-       не обрезается, на больших всё равно заполняет экран */
-    min-height: 100svh;
-    height: auto;
-    padding-top: 68px;
-    padding-bottom: 0;
-    overflow: visible; /* снимаем clip, чтобы кнопка не срезалась */
+    height: auto;          /* НЕ 100svh — пустоту убираем */
+    padding-top: 68px;     /* высота навбара */
+    padding-bottom: 2rem;
+    overflow: visible;
   }
 
-  /* Иллюстрация: высота через svh (масштабируется с экраном) */
+  /* Иллюстрация — пропорциональная ширине экрана */
   .hero-bg-svg {
     grid-column: auto;
-    flex: 0 0 32svh;       /* ~270px на iPhone 13, ~214px на SE */
-    min-height: 160px;
-    max-height: 300px;
+    flex: 0 0 auto;
+    height: clamp(180px, 45vw, 260px);
     overflow: hidden;
   }
   .hero-bg-svg::before {
@@ -217,23 +214,23 @@ nav.scrolled { box-shadow: 0 2px 40px rgba(35,35,32,0.07); }
     height: 100% !important;
   }
 
-  /* Текстовая панель: flex-рост, без clip */
+  /* Текстовая панель — высота строго по тексту, без растяжки */
   .hero-text-panel {
     grid-column: auto;
-    flex: 1 0 auto;
+    flex: 0 0 auto;        /* НЕ flex:1 — не растягиваем */
     display: flex;
     flex-direction: column;
-    justify-content: flex-start; /* center срезает eyebrow сверху */
-    padding: clamp(1rem, 3svh, 2rem) 1.25rem 1.75rem;
-    overflow: visible;
+    align-items: flex-start;
+    padding: 1.25rem 1.25rem 0;
   }
 
-  /* Теги: в строку, чуть компактнее */
+  /* Теги — горизонтально, компактно */
   .hero-eyebrow-n {
+    display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     gap: 0.3rem;
-    margin-bottom: 0.6rem;
+    margin-bottom: 0.75rem;
     font-size: 0.68rem;
   }
   .hero-eyebrow-n span {
@@ -242,74 +239,65 @@ nav.scrolled { box-shadow: 0 2px 40px rgba(35,35,32,0.07); }
 
   /* Заголовок */
   .hero-title-n {
-    font-size: clamp(1.75rem, 6.5vw, 2.2rem);
-    margin-bottom: 0.5rem;
+    font-size: clamp(1.8rem, 7vw, 2.2rem);
+    margin-bottom: 0.6rem;
     line-height: 1.18;
   }
 
-  /* Подзаголовок */
+  /* Подзаголовок — показываем полностью */
   .hero-subtitle-n {
     font-size: 0.88rem;
     line-height: 1.6;
-    margin-bottom: 1rem;
+    margin-bottom: 1.25rem;
+    display: block;        /* отменяем возможный -webkit-line-clamp */
+    overflow: visible;
+    -webkit-line-clamp: unset;
   }
 
-  /* Кнопки: только основная CTA */
-  .hero-actions { gap: 0.75rem; }
+  /* Кнопки */
+  .hero-actions { gap: 0.75rem; flex-wrap: wrap; }
   .hero-actions .btn-ghost { display: none; }
   .btn-primary {
-    padding: 0.75rem 1.6rem;
-    font-size: 0.78rem;
+    padding: 0.78rem 1.75rem;
+    font-size: 0.8rem;
   }
 }
 
-/* ── Маленькие телефоны ≤ 390px (iPhone SE, mini, Android) ── */
+/* ── Маленькие телефоны ≤ 390px (iPhone SE, mini) ─────────── */
 @media (max-width: 390px) {
   .hero-bg-svg {
-    flex: 0 0 28svh;
-    min-height: 140px;
-    max-height: 240px;
+    height: clamp(160px, 42vw, 220px);
   }
   .hero-text-panel {
-    padding: 0.75rem 1rem 1.5rem;
+    padding: 1rem 1rem 0;
   }
   .hero-eyebrow-n {
-    font-size: 0.64rem;
+    font-size: 0.63rem;
     gap: 0.25rem;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.6rem;
   }
   .hero-eyebrow-n span { padding: 0.12rem 0.5rem; }
   .hero-title-n {
-    font-size: clamp(1.6rem, 7vw, 1.9rem);
-    margin-bottom: 0.4rem;
+    font-size: clamp(1.65rem, 7.5vw, 2rem);
+    margin-bottom: 0.45rem;
   }
   .hero-subtitle-n {
     font-size: 0.83rem;
-    margin-bottom: 0.85rem;
+    margin-bottom: 1rem;
   }
 }
 
-/* ── Очень короткие экраны ≤ 700px по высоте (iPhone SE 2nd,
-      горизонтальная ориентация телефонов) ─────────────────── */
-@media (max-width: 768px) and (max-height: 700px) {
-  .hero-bg-svg {
-    flex: 0 0 26svh;
-    min-height: 120px;
-    max-height: 200px;
-  }
-  .hero-eyebrow-n { display: none; } /* скрываем теги на маленьком экране */
+/* ── Горизонтальная ориентация / очень короткий экран ──────── */
+@media (max-width: 768px) and (max-height: 500px) {
+  .hero-bg-svg { height: 38vw; }
+  .hero-eyebrow-n { display: none; }
   .hero-title-n {
-    font-size: clamp(1.5rem, 6vw, 1.85rem);
-    margin-bottom: 0.35rem;
+    font-size: clamp(1.4rem, 5.5vw, 1.75rem);
+    margin-bottom: 0.3rem;
   }
   .hero-subtitle-n {
-    font-size: 0.82rem;
-    margin-bottom: 0.7rem;
-    /* Обрезаем до 2 строк, если совсем мало места */
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
+    font-size: 0.8rem;
+    margin-bottom: 0.75rem;
   }
 }
 
