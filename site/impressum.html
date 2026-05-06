@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Impressum & Datenschutz – Elena Staiger Beratung Freiburg</title>
+  <link rel="icon" type="image/x-icon"   href="flower.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+  <link rel="apple-touch-icon"      sizes="180x180" href="favicon-180.png"><meta name="robots" content="noindex, follow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,400&family=Inter:wght@300;400;500&family=Lora:ital,wght@1,400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --white:    #FAFAF8;
+  --off:      #F3EFEA;
+  --stone:    #EAE4DC;
+  --charcoal: #232320;
+  --mid:      #5A5753;
+  --muted:    #8A8480;
+  --sage:     #5E8B73;
+  --sage-lt:  #A8C4B5;
+  --sage-dk:  #3D6B55;
+  --rose:     #C4978A;
+  --rose-lt:  #E8C8C0;
+  --serif:    'Fraunces', Georgia, serif;
+  --sans:     'Inter', system-ui, sans-serif;
+  --max:      860px;
+  --r:        10px;
+  --ease:     0.3s ease;
+}
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--sans); background: var(--white); color: var(--charcoal);
+  font-size: 16px; line-height: 1.8; font-weight: 300;
+}
+h1, h2, h3 { font-family: var(--serif); font-weight: 400; }
+h1 { font-size: clamp(2rem, 4vw, 2.8rem); }
+h2 { font-size: 1.35rem; margin: 2.5rem 0 0.75rem; color: var(--charcoal); font-weight: 400; }
+h3 { font-size: 1.05rem; margin: 1.5rem 0 0.4rem; font-weight: 400; color: var(--mid); }
+em, i { font-family: 'Lora', Georgia, serif; font-style: italic; font-weight: 400; color: var(--sage); }
+p { margin-bottom: 0.85rem; color: var(--mid); max-width: 70ch; }
+a { color: var(--sage-dk); text-decoration: none; transition: color var(--ease); }
+a:hover { color: var(--charcoal); }
+strong { font-weight: 500; color: var(--charcoal); }
+
+/* NAV */
+nav {
+  position: sticky; top: 0;
+  background: rgba(250,250,248,0.92);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(35,35,32,0.07);
+  z-index: 100;
+}
+.nav-inner {
+  max-width: var(--max); margin: 0 auto;
+  padding: 0 clamp(1.25rem,5vw,2.5rem);
+  height: 64px; display: flex; align-items: center; justify-content: space-between;
+}
+.nav-logo {
+  font-family: var(--serif); font-size: 1.2rem; font-weight: 400;
+  color: var(--charcoal); text-decoration: none;
+}
+.nav-logo span { color: var(--sage); }
+.nav-back {
+  font-size: 0.8rem; letter-spacing: 0.06em; text-transform: uppercase;
+  color: var(--muted); text-decoration: none;
+  display: flex; align-items: center; gap: 0.4rem;
+  transition: color var(--ease); padding: 0.5rem 1rem;
+  border: 1px solid rgba(35,35,32,0.1); border-radius: 50px;
+}
+.nav-back:hover { color: var(--charcoal); border-color: rgba(35,35,32,0.2); }
+
+/* PAGE */
+.page-wrap {
+  max-width: var(--max); margin: 0 auto;
+  padding: clamp(2.5rem,6vw,5rem) clamp(1.25rem,5vw,2.5rem);
+}
+.page-title { margin-bottom: 0.5rem; }
+.page-subtitle { font-size: 1rem; color: var(--muted); margin-bottom: 3rem; }
+
+.divider {
+  height: 1px;
+  background: linear-gradient(to right, var(--sage-lt), transparent);
+  margin: 2.5rem 0;
+  opacity: 0.5;
+}
+
+.section-block { margin-bottom: 2rem; }
+
+.info-table { width: 100%; border-collapse: collapse; margin: 0.75rem 0 1.25rem; }
+.info-table td {
+  padding: 0.55rem 0; vertical-align: top; font-size: 0.95rem;
+  border-bottom: 1px solid rgba(35,35,32,0.05);
+}
+.info-table td:first-child { color: var(--muted); min-width: 160px; padding-right: 1.5rem; }
+.info-table td:last-child { color: var(--charcoal); }
+
+.legal-box {
+  background: var(--off); border-radius: var(--r);
+  padding: 1.25rem 1.5rem;
+  border-left: 3px solid var(--sage-lt);
+  margin: 1rem 0 1.5rem;
+}
+.legal-box p { margin-bottom: 0; font-size: 0.9rem; }
+
+/* FOOTER */
+footer { background: var(--charcoal); padding: 2rem 0; margin-top: 4rem; }
+.footer-inner {
+  max-width: var(--max); margin: 0 auto;
+  padding: 0 clamp(1.25rem,5vw,2.5rem);
+  display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;
+}
+.footer-logo {
+  font-family: var(--serif); font-size: 1.1rem; font-weight: 400;
+  color: var(--white); text-decoration: none;
+}
+.footer-copy { font-size: 0.75rem; color: rgba(250,250,248,0.3); }
+.back-link { font-size: 0.8rem; color: rgba(250,250,248,0.45); text-decoration: none; transition: color var(--ease); }
+.back-link:hover { color: var(--white); }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">Elena <span>Staiger</span></a>
+    <a href="index.html" class="nav-back">← Zurück zur Startseite</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+  <h1 class="page-title">Impressum &amp; Datenschutz</h1>
+  <p class="page-subtitle">Rechtliche Pflichtangaben gemäß §5 TMG und DSGVO</p>
+
+  <!-- IMPRESSUM -->
+  <div class="section-block">
+    <h2>Impressum</h2>
+    <h3>Angaben gemäß §5 TMG</h3>
+    <table class="info-table">
+      <tr><td>Name</td><td><strong>Elena Staiger</strong></td></tr>
+      <tr><td>Tätigkeit</td><td>Psychologische Beraterin &amp; Personal Coach</td></tr>
+      <tr><td>Anschrift</td><td>Kirchzarten bei Freiburg im Breisgau, Baden-Württemberg</td></tr>
+      <tr><td>Telefon</td><td><a href="tel:+4976615612">+49 7661 56 12</a></td></tr>
+      <tr><td>Mobil</td><td><a href="tel:+491605045040">+49 160 504 504 0</a></td></tr>
+      <tr><td>E-Mail</td><td><a href="mailto:meet@elenastaigerberatung.de">meet@elenastaigerberatung.de</a></td></tr>
+    </table>
+
+    <h3>Berufsbezeichnung und berufsrechtliche Regelungen</h3>
+    <p>Elena Staiger ist <strong>zertifizierte psychologische Beraterin und Personal Coach</strong>. Die Bezeichnung „Psychologische Beraterin" ist in Deutschland keine gesetzlich geschützte Berufsbezeichnung. Elena Staiger ist keine approbierte Psychotherapeutin und erbringt keine Leistungen im Sinne des Psychotherapeutengesetzes (PsychThG).</p>
+
+    <h3>Haftung für Inhalte</h3>
+    <p>Als Diensteanbieter sind wir gemäß §7 Abs. 1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen. Bei Bekanntwerden von Rechtsverletzungen werden wir diese Inhalte umgehend entfernen.</p>
+
+    <h3>Haftung für Links</h3>
+    <p>Unser Angebot enthält Links zu externen Webseiten Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich.</p>
+
+    <h3>Urheberrecht</h3>
+    <p>Die durch die Seitenbetreiberin erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung der jeweiligen Autorin.</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- DATENSCHUTZ -->
+  <div class="section-block">
+    <h2>Datenschutzerklärung</h2>
+
+    <h3>1. Datenschutz auf einen Blick</h3>
+    <div class="legal-box">
+      <p>Die folgenden Hinweise geben einen einfachen Überblick darüber, was mit Ihren personenbezogenen Daten passiert, wenn Sie diese Website besuchen. Personenbezogene Daten sind alle Daten, mit denen Sie persönlich identifiziert werden können.</p>
+    </div>
+
+    <h3>2. Verantwortliche Stelle</h3>
+    <p>Verantwortliche Stelle im Sinne der Datenschutzgesetze ist:</p>
+    <table class="info-table">
+      <tr><td>Name</td><td>Elena Staiger</td></tr>
+      <tr><td>Anschrift</td><td>Kirchzarten bei Freiburg im Breisgau</td></tr>
+      <tr><td>E-Mail</td><td><a href="mailto:meet@elenastaigerberatung.de">meet@elenastaigerberatung.de</a></td></tr>
+      <tr><td>Telefon</td><td><a href="tel:+4976615612">+49 7661 56 12</a></td></tr>
+    </table>
+
+    <h3>3. Datenerfassung auf dieser Website</h3>
+    <p><strong>Kontaktformular:</strong> Wenn Sie uns per Kontaktformular Anfragen zukommen lassen, werden Ihre Angaben aus dem Anfrageformular inklusive der von Ihnen dort angegebenen Kontaktdaten zwecks Bearbeitung der Anfrage und für den Fall von Anschlussfragen bei uns gespeichert. Diese Daten geben wir nicht ohne Ihre Einwilligung weiter.</p>
+    <p><strong>Telefon &amp; E-Mail:</strong> Wenn Sie uns telefonisch oder per E-Mail kontaktieren, wird Ihre Anfrage inklusive aller daraus hervorgehenden personenbezogenen Daten zum Zwecke der Bearbeitung Ihres Anliegens bei uns gespeichert und verarbeitet. Diese Daten geben wir nicht ohne Ihre Einwilligung weiter.</p>
+    <p><strong>Server-Logfiles:</strong> Der Provider der Seiten erhebt und speichert automatisch Informationen in Server-Log-Dateien. Dies sind: Browsertyp, Betriebssystem, Referrer-URL, Hostname des zugreifenden Rechners sowie Uhrzeit der Serveranfrage. Diese Daten sind nicht bestimmten Personen zuordenbar.</p>
+
+    <h3>4. Ihre Rechte (DSGVO Art. 15–22)</h3>
+    <p>Sie haben jederzeit das Recht auf <strong>Auskunft</strong> über Ihre gespeicherten personenbezogenen Daten, deren Herkunft und Empfänger und den Zweck der Datenverarbeitung sowie ein Recht auf <strong>Berichtigung</strong> oder <strong>Löschung</strong> dieser Daten. Hierzu können Sie sich jederzeit unter der im Impressum angegebenen Adresse an uns wenden.</p>
+    <p>Sie haben außerdem das Recht, die Verarbeitung Ihrer Daten einzuschränken (<strong>Recht auf Einschränkung</strong>), der Verarbeitung zu <strong>widersprechen</strong> sowie das Recht auf <strong>Datenübertragbarkeit</strong>. In Baden-Württemberg ist die zuständige Datenschutzbehörde der <strong>Landesbeauftragte für den Datenschutz und die Informationsfreiheit Baden-Württemberg</strong>.</p>
+
+    <h3>5. Keine Weitergabe an Dritte</h3>
+    <p>Eine Weitergabe Ihrer Daten an Dritte zu Werbezwecken findet nicht statt. Ihre Daten werden ausschließlich für die Bearbeitung Ihrer Anfrage und zur Kontaktaufnahme im Rahmen der Beratungstätigkeit verwendet.</p>
+
+    <h3>6. Schweigepflicht &amp; Vertraulichkeit</h3>
+    <div class="legal-box">
+      <p>Alle im Rahmen der Beratung anvertrauten Informationen werden streng vertraulich behandelt. Elena Staiger unterliegt der beruflichen Schweigepflicht. Inhalte aus Beratungsgesprächen werden ohne Ihre ausdrückliche Einwilligung nicht an Dritte weitergegeben.</p>
+    </div>
+
+    <h3>7. Cookies</h3>
+    <p>Diese Website verwendet keine Tracking-Cookies und keine Analyse-Dienste wie Google Analytics. Es werden ausschließlich technisch notwendige Session-Daten verarbeitet.</p>
+
+    <h3>8. Aktualität dieser Erklärung</h3>
+    <p>Diese Datenschutzerklärung ist aktuell gültig und hat den Stand: Mai 2026.</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <p style="font-size:0.85rem; color:var(--muted);">Bei Fragen zu Impressum oder Datenschutz: <a href="mailto:meet@elenastaigerberatung.de">meet@elenastaigerberatung.de</a></p>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <a href="index.html" class="footer-logo">Elena Staiger</a>
+    <a href="index.html" class="back-link">← Zurück zur Startseite</a>
+    <span class="footer-copy">© 2026 Elena Staiger Beratung, Kirchzarten</span>
+  </div>
+</footer>
+
+</body>
+</html>
